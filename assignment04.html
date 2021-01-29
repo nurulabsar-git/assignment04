@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT04-Flight Booking</title>
+   
+   
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"> 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="assignment04.css">
+   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/> -->
+    
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+        <div class="booking-form">
+            <h3>Booking Flights</h3>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="input-group f-class">
+                <div>
+                    <label for="">First Class($150)</label> 
+                    <input id="first-class" class="inp-style inp-width" type="number" name="" value="0">
+                </div>
+                <div class="d-md-flex">
+                    <p class="plus-minus-btn" onclick="countYourTicket('first', true) ">+</p>
+                    <p class="plus-minus-btn" onclick="countYourTicket('first', false)">-</p>
+
+                </div>
+            </div>
+            
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Economy ($100)</label>
+                    <input id="economy-class" class="inp-style inp-width" type="number" name="" value="0">
+                </div>
+                <div class="d-md-flex">
+                    <p class="plus-minus-btn" onclick="countYourTicket('economy', true) ">+</p>
+                    <p class="plus-minus-btn" onclick="countYourTicket('economy', false)">-</p>
+                </div>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="subtotal-price">00</span></p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="total-tax">00</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>$<span id="total-cost">00</span></p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-style">Book Now</button>
+        </div>
+
+        <div class="booking-content">
+            <h1>discover <br> around the world</h1>
+            <p>	The First Successful Airplane - 1903 Marks the Year that the Wright Brothers Invented the First Successful Airplane
+                Buoyant over the success of their 1902 glider, the Wright brothers were no longer content to merely add to the growing body of aeronautical knowledge; they were going to invent the airplane. Still, they recognized that much hard work lay ahead, especially the creation of a propulsion system. During the spring and summer of 1903, they were consumed with leaping that final hurdle into history.
+            </p>
+        </div>
+    </section>
+
+    <!--Thank You-->
+
+    <script>
+function  countYourTicket(ticketType, isPurchase){
+            const typeOfTicket = document.getElementById(ticketType + '-class');
+             const  convertTypeOfTicketValue = parseInt(typeOfTicket.value);
+            let updateTicket = convertTypeOfTicketValue;
+            if(isPurchase == true){
+                updateTicket = convertTypeOfTicketValue + 1;    
+            }
+
+            if(isPurchase == false && convertTypeOfTicketValue > 0){
+                updateTicket = convertTypeOfTicketValue - 1;
+            }
+
+            typeOfTicket.value =updateTicket;
+            
+             const totalCost = updateTicket;
+            
+            yourTotalTicketCost();
+          }
+
+  
+        function yourTotalTicketCost(){
+              const firstClassTicketInfo = document.getElementById("first-class");
+              const firstClassTicketInfoConvert = parseFloat(firstClassTicketInfo.value);
+
+             const economyTicketInfo = document.getElementById("economy-class");
+             const economyTicketInfoConvert = parseFloat(economyTicketInfo.value);
+
+             const yourSubTotalCost =firstClassTicketInfoConvert *150 + economyTicketInfoConvert *100;
+             document.getElementById("subtotal-price").innerText = yourSubTotalCost;   // '$' + yourTotalCost
+
+            const tax = Math.round(yourSubTotalCost * 0.1);
+            document.getElementById('total-tax').innerText = tax;
+            const totalCost = yourSubTotalCost + tax;
+            document.getElementById('total-cost').innerText = totalCost;
+
+            }
+
+    </script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
