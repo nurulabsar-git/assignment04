@@ -115,7 +115,7 @@
             </div>
         </section>
     </div>
-
+<!--Extra Section -->
     <div id="information" class="mt-5 mb-5">
       <section>
         <div class="calculations">
@@ -152,10 +152,10 @@
     </div>
 
 
-    <!--Thank You-->
-
+    <!--java script part -->
     <script>
-function  countYourTicket(ticketType, isPurchase){
+
+    function  countYourTicket(ticketType, isPurchase){
             const typeOfTicket = document.getElementById(ticketType + '-class');
              const  convertTypeOfTicketValue = parseInt(typeOfTicket.value);
             let updateTicket = convertTypeOfTicketValue;
@@ -176,7 +176,7 @@ function  countYourTicket(ticketType, isPurchase){
         }
 
   
-        function yourTotalTicketCost(){
+     function yourTotalTicketCost(){
               const firstClassTicketInfo = document.getElementById("first-class");
               const firstClassTicketInfoConvert = parseFloat(firstClassTicketInfo.value);
 
@@ -193,9 +193,7 @@ function  countYourTicket(ticketType, isPurchase){
 
             }
 
-
-
-            function yourTotalTicketCostInfo(){
+    function yourTotalTicketCostInfo(){
               const firstClassTicketInfoA = document.getElementById("first-class");
               const firstClassTicketInfoConvertA = parseFloat(firstClassTicketInfoA.value);
 
@@ -212,22 +210,18 @@ function  countYourTicket(ticketType, isPurchase){
 
             }
 
-
-            function bookNow(){
+    function bookNow(){
                 const beInfoArea = document.getElementById("be-info");
                 beInfoArea.style.display = "none";
 
                 const bookNowArea = document.getElementById("information");
                 bookNowArea.style.display = "block";
             }
-
-
-
-
-            
     </script>
 
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Thank You Programming Hero Community  -->
 </body>
 
 </html>
