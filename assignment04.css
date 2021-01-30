@@ -128,7 +128,7 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 
-.amounts{
+.another-amount{
     display: flex;
     justify-content: space-evenly;
     font-family: 'Bebas Neue', cursive;
