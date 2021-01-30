@@ -104,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="book-now" class="btn-style">Book Now</button>
+                <button onclick="bookNow()" class="btn-style">Book Now</button>
             </div>
     
             <div class="booking-content">
@@ -178,17 +178,13 @@ function  countYourTicket(ticketType, isPurchase){
 
             }
 
-            const bookNowBtn = document.getElementById("book-now");
-            bookNowBtn.addEventListener("click", function(){
+            function bookNow(){
                 const beInfoArea = document.getElementById("be-info");
                 beInfoArea.style.display = "none";
 
                 const bookNowArea = document.getElementById("information");
                 bookNowArea.style.display = "block";
-
-
-            })
-
+            }
     </script>
 
     <script src="js/bootstrap.min.js"></script>
