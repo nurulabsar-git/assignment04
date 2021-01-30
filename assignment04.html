@@ -129,9 +129,9 @@
 
         <div class="right">
           <h6><span> 00</span></h6>
-          <h6>$<span> 00</span> </h6>
-          <h6>$<span> 00</span> </h6>
-          <h6>$<span> 00</span> </h6>
+          <h6>$<span id="subtotal-price-info"> 00</span> </h6>
+          <h6>$<span id="total-tax-info"> 00</span> </h6>
+          <h6>$<span id="total-cost-info"> 00</span> </h6>
         </div>
 
         </section>
@@ -158,7 +158,8 @@ function  countYourTicket(ticketType, isPurchase){
              const totalCost = updateTicket;
             
             yourTotalTicketCost();
-          }
+           yourTotalTicketCostInfo()
+        }
 
   
         function yourTotalTicketCost(){
@@ -177,6 +178,31 @@ function  countYourTicket(ticketType, isPurchase){
             document.getElementById('total-cost').innerText = totalCost;
 
             }
+
+
+
+            function yourTotalTicketCostInfo(){
+              const firstClassTicketInfoR = document.getElementById("first-class");
+              const firstClassTicketInfoConvertR = parseFloat(firstClassTicketInfoR.value);
+
+             const economyTicketInfoR = document.getElementById("economy-class");
+             const economyTicketInfoConvertR = parseFloat(economyTicketInfoR.value);
+
+             const yourSubTotalCostR =firstClassTicketInfoConvertR *150 + economyTicketInfoConvertR *100;
+             document.getElementById("subtotal-price-info").innerText = yourSubTotalCostR;   // '$' + yourTotalCost
+
+            const taxR = Math.round(yourSubTotalCostR * 0.1);
+            document.getElementById('total-tax-info').innerText = taxR;
+            const totalCostR = yourSubTotalCostR + taxR;
+            document.getElementById('total-cost-info').innerText = totalCostR;
+
+            }
+
+
+
+
+
+
 
             function bookNow(){
                 const beInfoArea = document.getElementById("be-info");
