@@ -196,19 +196,19 @@ function  countYourTicket(ticketType, isPurchase){
 
 
             function yourTotalTicketCostInfo(){
-              const firstClassTicketInfoR = document.getElementById("first-class");
-              const firstClassTicketInfoConvertR = parseFloat(firstClassTicketInfoR.value);
+              const firstClassTicketInfoA = document.getElementById("first-class");
+              const firstClassTicketInfoConvertA = parseFloat(firstClassTicketInfoA.value);
 
-             const economyTicketInfoR = document.getElementById("economy-class");
-             const economyTicketInfoConvertR = parseFloat(economyTicketInfoR.value);
+             const economyTicketInfoA = document.getElementById("economy-class");
+             const economyTicketInfoConvertA = parseFloat(economyTicketInfoA.value);
 
-             const yourSubTotalCostR =firstClassTicketInfoConvertR *150 + economyTicketInfoConvertR *100;
-             document.getElementById("subtotal-price-info").innerText = yourSubTotalCostR;   // '$' + yourTotalCost
+             const yourSubTotalCostA =firstClassTicketInfoConvertA *150 + economyTicketInfoConvertA *100;
+             document.getElementById("subtotal-price-info").innerText = yourSubTotalCostA;   // '$' + yourTotalCost
 
-            const taxR = Math.round(yourSubTotalCostR * 0.1);
-            document.getElementById('total-tax-info').innerText = taxR;
-            const totalCostR = yourSubTotalCostR + taxR;
-            document.getElementById('total-cost-info').innerText = totalCostR;
+            const taxA = Math.round(yourSubTotalCostA * 0.1);
+            document.getElementById('total-tax-info').innerText = taxA;
+            const totalCostA = yourSubTotalCostA + taxA;
+            document.getElementById('total-cost-info').innerText = totalCostA;
 
             }
 
