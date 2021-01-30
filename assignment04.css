@@ -127,6 +127,19 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 
+.amounts{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+}
+
 #information{
     display: none;
+    box-shadow: 10px 10px 30px gray;
+    border-radius: 5px;
+    width: 50%;
+    align-items: center;
+    color: white;
+    
 }
