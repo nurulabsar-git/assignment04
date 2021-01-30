@@ -37,6 +37,7 @@ nav ul li a{
     color: #fff;
     padding: 10px;
     text-transform: uppercase;
+    text-decoration: none;
    
 }
 nav ul li a:hover, a.active{
@@ -136,10 +137,10 @@ nav ul li a:hover, a.active{
 
 #information{
     display: none;
+    background-color: lightskyblue;
     box-shadow: 10px 10px 30px gray;
     border-radius: 5px;
     width: 50%;
-    align-items: center;
     color: white;
     
 }
